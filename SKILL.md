@@ -1,145 +1,139 @@
 ---
 name: pex-jobslayer-image-breakdown-intelligence
-description: Pex JobSlayer evidence-first static image and ad creative intelligence. Use when analyzing ad images, product visuals, screenshots, image URLs, visual hierarchy, copy, offers, audience hypotheses, creative strategy, or AI recreation/improvement prompts; separate visible facts from interpretation and tests.
+description: Pex JobSlayer Outcome-First Creative Lab for turning static ads and product images into original, testable creative directions. Use when the user wants better ad results without copying a reference, including visual diagnosis, creative strategy, variant concepts, audience hypotheses, and AI image prompts.
 ---
 
-# Pex JobSlayer — Static Image & Ad Creative Intelligence
+# Pex JobSlayer — Outcome-First Creative Lab
 
-## Mission
-Turn an image into a defensible creative decision: what is visibly present, what marketing job it appears to perform, what may be blocking comprehension or action, and what should be tested next. Do not treat visual quality, longevity, or aesthetic preference as proof of performance.
+## Purpose
+Use a reference image as **research input, never as a blueprint**. Recover the job the creative is trying to do, identify the friction that may prevent that job, then invent distinct executions and test them. The goal is equivalent or better business learning and performance—not visual duplication.
 
-## Non-negotiable rules
+## Originality firewall
 
-1. **Observe before interpreting.** Separate `FACT` (visible or directly transcribed), `SIGNAL` (pattern supported by visible evidence), `BET` (hypothesis to test), and `GAP` (not observable).
-2. **Never invent text, product claims, brand intent, demographics, targeting, conversion rate, CTR, CPA, ROAS, or winner status.** An image alone cannot prove these.
-3. If text is unreadable, say `อ่านข้อความไม่ชัดเจน` and quote only the legible portion. Do not silently repair or translate uncertain copy.
-4. Describe people and audiences only through observable context and a cautious audience hypothesis. Do not infer sensitive traits or protected attributes.
-5. Do not identify fonts, exact HEX values, camera settings, or dimensions as certain unless provided or measured. Use `ประมาณการ` and confidence labels.
-6. Do not recommend copying a competitor's protected creative. Extract transferable principles and propose distinct executions.
-7. Analyze every image separately before comparing a set. Do not average away important differences.
-8. Prompt sections may be in English for image-tool compatibility; the analysis and recommendations should be in Thai unless the user requests another language.
-9. A prompt must not ask an image model to render dense final copy unless the chosen tool reliably supports text. Put copy in a separate design step when needed.
-10. If the source is private, restricted, geo-blocked, broken, or unavailable, state the limitation and continue only with the material actually available.
+- Do not reproduce the source's exact composition, copy, headline rhythm, object placement, color treatment, layout, distinctive prop combination, logo treatment, or recognizable art direction.
+- Abstract the source into transferable levers such as `contrast`, `proof`, `urgency`, `demonstration`, `social context`, `price salience`, or `category education`.
+- Change at least **three major dimensions** in every new direction: composition, visual metaphor/scene, copy angle, color system, subject action, proof device, or information architecture.
+- Never use a competitor's name to request an exact style. Describe an independent art direction instead.
+- If the user asks to “copy exactly”, explain that the useful alternative is a **principle transfer**: retain the communication job, create a distinct execution, and validate it with a test.
 
-## Input routing
+## Evidence discipline
 
-Accept: local image files, uploaded images, screenshots, public image URLs, product visuals, logos, brand references, and one or more ad creatives.
+Use four tags throughout the work:
 
-Choose the route:
+- `OBSERVED`: directly visible or transcribed.
+- `INTERPRETED`: a reasonable reading of the visible evidence.
+- `HYPOTHESIS`: a claim about audience behavior or performance that requires a test.
+- `UNKNOWN`: not readable, not present, or not inferable from the image.
 
-- **Local/uploaded image:** inspect with the native image-reading capability first; use deterministic tools only for measurable properties such as dimensions, aspect ratio, color sampling, or cropping.
-- **Public URL:** verify that it is accessible and public, then obtain a viewable image. If access fails, do not fabricate an analysis from the URL or page title.
-- **Multiple images:** create one record per image, then a comparison table with matched fields.
-- **Prompt-only request:** ask for the target, product, audience/context, platform, aspect ratio, desired fidelity, and what must change; do not pretend an unseen reference was inspected.
+Never invent hidden copy, product benefits, brand intent, audience demographics, funnel stage, CTR, CPA, ROAS, or winner status. Mark uncertain text as `[ไม่ชัดเจน]`. Do not infer protected or sensitive traits from appearance.
 
-## Core workflow
+## Input and route selection
 
-1. **Capture the decision.** Identify whether the user wants diagnosis, recreation, improvement, competitive learning, a creative brief, prompt generation, or comparison. If absent, state a reasonable default.
-2. **Record source scope.** Log source/file name or URL, access date, image count, visible platform/context, and any missing or cropped areas.
-3. **Inspect the whole image.** First form a one-sentence neutral description without marketing interpretation. Then inspect regions: background, subject/product, text blocks, logo, offer, CTA, proof, and negative space.
-4. **Transcribe visible copy.** Preserve line breaks where they affect hierarchy. Mark uncertain words with `[ไม่ชัดเจน]`; distinguish text on-image from text supplied by the user.
-5. **Build the evidence map.** For every important conclusion, attach the visible evidence, label, confidence (`สูง/กลาง/ต่ำ`), and what would change it.
-6. **Decode the creative system.** Analyze attention, comprehension, desire, trust, action, and brand memory as separate jobs. Do not force every image to have a CTA or direct-response role.
-7. **Diagnose friction.** Identify the first likely comprehension break, visual competition, weak proof, unclear offer, unreadable copy, low contrast, or mismatch between promise and action. Label the diagnosis as a `BET` unless directly observable.
-8. **Recommend changes.** Prioritize up to three changes by expected learning value and implementation effort. Keep the product truth, brand constraints, and legal/claim boundaries visible.
-9. **Create test cards.** Each test should change one major variable when possible and specify a bet, evidence, change, hold, audience/context hypothesis, primary metric, guardrail, and read rule.
-10. **Generate prompts only after the strategy is clear.** Provide a faithful recreation prompt only when requested, plus an improvement prompt that preserves essential brand/product facts while changing the chosen variable.
-11. **Run a final quality gate.** Check that facts, signals, bets, and gaps are distinguishable; no hidden performance claims were added; prompts are actionable; and uncertain details are marked.
+Accept local/uploaded images, screenshots, public image URLs, product visuals, logos, brand references, and image sets.
 
-## Image analysis framework
+1. Establish the desired business outcome: attention, qualified click, lead, purchase, trust, education, retargeting, or brand memory.
+2. Establish constraints: product truth, prohibited claims, brand assets, platform/placement, aspect ratio, audience context, and available performance data.
+3. Inspect the whole image with native image understanding. Use deterministic tools only for measurable properties such as dimensions, aspect ratio, or color sampling.
+4. For URLs, verify public access and obtain a viewable image. If unavailable or restricted, report the limitation and do not infer from the URL alone.
+5. For multiple images, create separate observations first; compare only after each image has its own decision record.
 
-### A. Neutral inventory — FACT only
+## The Outcome-First workflow
 
-- Subject/product and count
-- Scene, setting, background, and visible props
-- Human action or pose, without sensitive-attribute inference
-- Text, logo, offer, price, badge, proof, CTA, and destination cues
-- Composition, crop, orientation, and approximate aspect ratio
-- Lighting, color family, texture, depth, and visual style
+### 1. Write the job statement
+Complete: “This creative appears intended to help [audience/context] believe or do [action] because it uses [visible mechanism].” Tag each part `OBSERVED`, `INTERPRETED`, or `HYPOTHESIS`.
 
-### B. Attention architecture
+### 2. Build a signal ledger
+Record only high-value signals, not an exhaustive art-school description:
 
-Map the likely scan path: first fixation → second fixation → supporting detail → action/brand memory. Evaluate focal point, contrast, scale, directionality, salience, clutter, and whether the first read matches the intended hook. Use `SIGNAL` for visible hierarchy and `BET` for predicted attention behavior.
+| Signal | Evidence in image | Possible job | Confidence | Unknown |
+|---|---|---|---|---|
+| | | | | |
 
-### C. Message and offer architecture
+Look for attention trigger, promise, proof, offer, action cue, brand memory, and friction. Transcribe only legible text.
 
-Extract, without rewriting as fact:
+### 3. Diagnose the bottleneck
+Choose the first likely break in the path:
 
-- **Situation:** pain, aspiration, event, comparison, education, identity, entertainment, unknown
-- **Promise:** functional, emotional, identity, price/promotion, proof-led, unknown
-- **Mechanism:** how the product appears to create the promised outcome; always a `BET` unless explicitly shown
-- **Proof:** demonstration, testimonial, authority, numbers, guarantee, UGC, packaging, none visible
-- **Offer:** product/service, consultation, lead magnet, discount, event, content, unknown
-- **Action:** CTA or next step visible, implied, or not present
+`notice → understand → believe → want → know what to do → remember brand`
 
-### D. Design and readability
+State whether the break is visible (`OBSERVED`) or predicted (`HYPOTHESIS`). Prioritize one bottleneck; do not produce a long list of cosmetic opinions.
 
-Assess hierarchy, grouping, alignment, spacing, balance, contrast, type scale, line length, cropping, safe areas, mobile legibility, and text-to-image competition. For exact colors or dimensions, give an estimate and state the measurement method or uncertainty.
+### 4. Convert the source into principles
+Write 3–5 abstract principles using verbs, for example:
 
-### E. Conversion and brand role
+- “Make the before/after contrast instantly legible.”
+- “Use proof before adding decorative detail.”
+- “Give the offer a single visual home.”
 
-Classify the likely role as one or more of: `attention`, `problem education`, `desire`, `trust`, `offer support`, `conversion`, `retargeting`, `brand memory`, or `unknown`. The classification is a hypothesis unless the user supplied funnel context or the image makes the role explicit.
+Then explicitly list what **not** to carry over: composition, wording, palette, prop arrangement, or distinctive styling.
 
-### F. Audience hypothesis
+### 5. Create a divergence board
+Generate three independent directions:
 
-Describe the audience through the situation the image speaks to, desired outcome, sophistication level, and likely objection. Provide no more than three hypotheses and include a confidence note. Never infer protected or sensitive attributes from appearance.
+- **Direction A — Demonstration:** show the mechanism or transformation through a new scene.
+- **Direction B — Decision shortcut:** simplify the choice with a new information structure or comparison.
+- **Direction C — Human consequence:** show the lived outcome, ritual, or context rather than the product pose.
+
+Adapt these names when the category requires it, but keep the directions materially different. Each direction must state its changed dimensions and its risk.
+
+### 6. Design the test
+For each selected direction, define one variable to learn, the control, the expected behavior, the primary metric, a guardrail, minimum observation window, and the decision rule. Do not call a creative a winner without supplied performance data.
+
+### 7. Produce the asset brief and prompt
+Generate a production brief before an AI prompt. Preserve product truth and brand constraints; invent only the visual execution. Reserve space for final typesetting instead of asking the image model for dense copy.
+
+### 8. Quality and originality gate
+Reject the direction if a viewer could place it side-by-side with the reference and identify it as the same layout, wording, palette, or distinctive scene. Rework it by changing the communication device, not by adding random decoration.
 
 ## Output modes
 
-- **Quick diagnosis:** one-line role, three evidence-backed findings, top three changes, one test.
-- **Full breakdown:** use `templates/image-analysis-report.md`.
-- **Creative brief:** turn findings into a production brief with objective, message, proof, visual direction, copy slots, CTA, constraints, and variants.
-- **Prompt pack:** use `templates/prompt-pack.md`; include faithful recreation, strategic improvement, and platform adaptation prompts.
-- **Comparison:** analyze each image first, then compare matched fields; identify transferable principles, not a winner unless performance data is supplied.
-- **OCR/copy only:** output only legible transcription, uncertainty notes, hierarchy, and suggested copy slots.
+- **Decision Sprint:** job statement, bottleneck, three principles, three original directions, one recommended test.
+- **Creative Lab Report:** use `templates/creative-lab-report.md`.
+- **Variant Board:** output three to six directions with changed dimensions, risk, and test setup.
+- **Prompt Studio:** use `templates/prompt-pack.md`; create original prompts only—no faithful recreation prompt.
+- **Set comparison:** compare principles, bottlenecks, and learning opportunities; do not rank by aesthetics alone.
+- **Copy/legibility pass:** return only confirmed transcription, hierarchy, uncertainty, and new copy angles.
 
-## Default full-report order
+## Recommended report sequence
 
-1. Decision and source scope
-2. Neutral visual inventory
-3. On-image copy transcription and uncertainty
-4. Evidence map
-5. Attention and visual hierarchy
-6. Message, offer, proof, and funnel-role hypothesis
-7. Color, typography, layout, and readability
-8. Strengths and friction points
-9. Audience/context hypotheses
-10. Prioritized improvement plan
-11. Test cards and measurement
-12. Prompt pack, if requested
-13. Gaps and next input needed
+1. Decision and constraints
+2. Job statement
+3. Signal ledger
+4. Bottleneck diagnosis
+5. Principle transfer / do-not-copy list
+6. Divergence board
+7. Recommended direction and production brief
+8. Test design and measurement
+9. AI prompt pack, if requested
+10. Unknowns and next evidence needed
 
-## Prompt construction rules
+## Prompt Studio rules
 
-Before writing a prompt, specify: target output, fidelity level, subject/product facts that must remain, variable to change, platform/aspect ratio, intended mood, composition, lighting, camera/viewpoint, color direction, negative constraints, and text handling.
+Every prompt must include: outcome, product truth, audience context, one learning hypothesis, three or more changed dimensions, composition, scene/action, lighting/color, platform ratio, clean text area, negative constraints, and post-generation checks.
 
-Use this structure in English:
+Use English for image tools when helpful:
 
 ```text
-Create a [format/aspect ratio] advertising image for [product/context].
-Preserve: [truthful product/brand facts and required visual anchors].
-Change: [one strategic variable].
-Subject and scene: [observable or supplied details].
-Composition: [focal point, hierarchy, crop, negative space, safe area].
-Lighting and color: [direction].
-Style: [distinct art direction, not a named competitor's exact style].
-Text handling: leave clean space for later typesetting; do not generate dense copy.
-Avoid: [unwanted claims, clutter, distortions, extra products, illegible text].
-Output: [platform, ratio, variants, realism/style level].
+Create an original [platform/aspect ratio] advertising visual for [truthful product/context].
+Business job: [attention, understanding, trust, desire, or action].
+Learning hypothesis: [one testable hypothesis].
+Preserve only: [verified product/brand facts].
+Do not copy: [reference layout, wording, palette, prop arrangement, or distinctive style].
+New execution: [new scene, visual metaphor, subject action, and information structure].
+Composition: [new focal point, scan path, crop, and safe area].
+Lighting and color: [independent direction].
+Text handling: reserve clean space for later typesetting; do not render dense copy.
+Avoid: unsupported claims, distorted packaging, extra products, competitor imitation, clutter, and illegible text.
+Output: [ratio, number of variants, realism/style level].
 ```
 
-For a faithful recreation, say what must remain and do not add unsupported claims. For an improvement prompt, list the hypothesis being tested and keep the changed variable isolated.
+## Final response checks
 
-## Quality gate
-
-Before responding, verify:
-
-- The user's decision and source scope are explicit.
-- Visible facts are not mixed with interpretation.
-- Every important inference is labeled `SIGNAL` or `BET` with evidence.
-- Unreadable or missing details are marked, not guessed.
-- No sensitive audience traits or performance data were invented.
-- Recommendations are prioritized and actionable.
-- Tests include a primary metric, guardrail, and read rule.
-- Prompts preserve product truth, brand constraints, and text-handling limits.
-- Multi-image work contains per-image analysis before comparison.
+- Is the desired business outcome explicit?
+- Are observation, interpretation, hypothesis, and unknown separated?
+- Is the main bottleneck prioritized?
+- Are transferable principles abstract rather than copied details?
+- Does every new direction differ in at least three major dimensions?
+- Is product truth preserved without invented claims?
+- Does the test specify control, metric, guardrail, window, and read rule?
+- Does the prompt reserve text for a later design step?
